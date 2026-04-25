@@ -1,54 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Resume</title>
+
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(to right, #eef2f3, #dfe9f3);
+            margin: 0;
+            padding: 20px;
+        }
 
-h1 {
-    color: #d291ff;              
-    border-bottom: 2px solid #d291ff;
-}
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-h3, p {
-    color: white;            
-}
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            text-transform: capitalize;
+        }
 
-.list-container {
-    display: flex;
-    justify-content: center;
-}
+        h2 {
+            text-align: center;
+            color: #7f8c8d;
+            font-weight: normal;
+            margin-top: 0;
+        }
 
+        h3 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            margin-top: 25px;
+        }
 
-ul {
-    text-align: left;
-    list-style-type: square;
-    background-color: black;    
-    padding: 15px 30px;          
-    border-radius: 10px;        
-}
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-a {    
-    color: white;
-    background-color: #a259ff;  
-    padding: 8px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-}
+        ul li {
+            background: #f8f9fb;
+            margin: 6px 0;
+            padding: 10px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        ul li:hover {
+            background: #eaf4ff;
+            transform: translateX(5px);
+        }
+
+        p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(45deg, #3498db, #6dd5fa);
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: linear-gradient(45deg, #2980b9, #57c1eb);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
     </style>
-
-
-    
 </head>
+
 <body>
-    <h1 class="main-title">lisha kotian</h1>
-    <h2 id="myCourse">Computer science student at "Manglore Institute Of Technology & Engineering"</h2>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Lisha Kotian</h1>
+        <h2>Computer Science Engineering Student</h2>
+    </div>
+
     <h3>About Me</h3>
-    <p >I am a second-year Computer Science and Engineering student. I like learning programming and new technologies. I enjoy coding and improving my skills.</p>
-    <h3>Goals</h3>
-    <p style="text-align: center; font-size: 16px">My goal is to become a good software engineer. I want to improve my coding skills and learn new technologies. I also want to build useful projects and gain experience.</p>
- <a href="https://lisha-kotian.github.io/sem4-fet/">My Resume</a>  
+    <ul>
+        <li>Interested in exploring new technologies</li>
+        <li>Languages known: C, Python</li>
+    </ul>
+
+    <h3>Education</h3>
+    <ul>
+        <li>BE in Computer Science Engineering (Pursuing)</li>
+        <li>Completed Computer Course</li>
+        <li>12th Grade</li>
+        <li>10th Grade</li>
+    </ul>
+
+    <h3>Career Objective</h3>
+    <p>
+        To secure a position in the field of computer science where I can apply my knowledge,
+        improve my skills, and contribute to organizational growth.
+    </p>
+
+    <h3>Strengths</h3>
+    <ul>
+        <li>Hardworking</li>
+        <li>Good communication skills</li>
+    </ul>
+
+    <h3>Hobbies</h3>
+    <ul>
+        <li>Learning new technologies</li>
+        <li>Listening to music</li>
+    </ul>
+
+    <a href="https://lisha-kotian.github.io/sem4-fet/" target="_blank">
+        View My Online Resume
+    </a>
+
+</div>
+
 </body>
 </html>
-
