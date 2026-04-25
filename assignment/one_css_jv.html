@@ -2,170 +2,365 @@
 <html>
 <head>
     <title>My Resume</title>
-
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background: linear-gradient(to right, #eef2f3, #dfe9f3);
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 750px;
-            margin: auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-family: sans-serif;
+            margin: 40px;
+            text-align: center;
+            background-color: #1a0f2e;  
+            color: white;              
         }
 
         h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 5px;
-            text-transform: capitalize;
+            color: #d291ff;              
+            border-bottom: 2px solid #d291ff;
         }
 
-        h2 {
-            text-align: center;
-            color: #7f8c8d;
-            font-weight: normal;
-            margin-top: 0;
+        h3, p {
+            color: white;            
         }
 
-        h3 {
-            color: #2c3e50;
-            border-left: 5px solid #3498db;
-            padding-left: 10px;
-            margin-top: 25px;
+        .list-container {
+            display: flex;
+            justify-content: center;
         }
 
         ul {
-            list-style-type: none;
-            padding-left: 0;
+            text-align: left;
+            list-style-type: square;
+            background-color: black;    
+            padding: 15px 30px;          
+            border-radius: 10px;        
         }
 
-        ul li {
-            background: #f8f9fb;
-            margin: 6px 0;
-            padding: 10px;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
-
-        ul li:hover {
-            background: #eaf4ff;
-            transform: translateX(5px);
-        }
-
-        p {
-            line-height: 1.7;
-            color: #555;
-        }
-
-        a {
-            display: block;
-            text-align: center;
-            margin-top: 25px;
-            text-decoration: none;
+        a {    
             color: white;
-            background: linear-gradient(45deg, #3498db, #6dd5fa);
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        a:hover {
-            background: linear-gradient(45deg, #2980b9, #57c1eb);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
+            background-color: #a259ff;  
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
         }
 
         button {
-            display: block;
-            margin: 20px auto;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #a259ff;
             color: white;
-            font-weight: bold;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
+    </style>
+</head>
+<body>
 
-        button:hover {
-            background: linear-gradient(45deg, #1e8449, #28b463);
+    <h1>Manya Shetty</h1>
+
+    <!-- This text will change -->
+    <h3 id="course">Computer Science Engineering Student</h3>
+
+    <!-- Button -->
+    <button onclick="changeCourse()">Change Course</button>
+
+    <div class="list-container">
+        <ul>
+            <li>Interested to explore new things.</li>
+            <li>Languages known: C, Python.</li>
+        </ul>
+    </div>
+
+    <h3>Education</h3>
+    <div class="list-container">
+        <ul>
+            <li>BE in Computer Science Engineering (Pursuing)</li>
+            <li>Completed Computer Course</li>
+            <li>12th Grade</li>
+            <li>10th Grade</li>
+        </ul>
+    </div>
+
+    <h3>Career Objective</h3>
+    <p>
+        To secure a position in the field of Computer Science where I can
+        apply my knowledge, improve my skills, and contribute to organizational growth.
+    </p>
+
+    <h3>Strengths</h3>
+    <div class="list-container">
+        <ul>
+            <li>Hardworking</li>
+            <li>Good communication skills</li>
+        </ul>
+    </div>
+
+    <h3>Hobbies</h3>
+    <div class="list-container">
+        <ul>
+            <li>Learning new technologies</li>
+            <li>Listening to music</li>
+        </ul>
+    </div>
+
+    <p>
+       <!DOCTYPE html>
+<html>
+<head>
+    <title>My Resume</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            text-align: center;
+            background-color: #1a0f2e;  
+            color: white;              
+        }
+
+        h1 {
+            color: #d291ff;              
+            border-bottom: 2px solid #d291ff;
+        }
+
+        h3, p {
+            color: white;            
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            text-align: left;
+            list-style-type: square;
+            background-color: black;    
+            padding: 15px 30px;          
+            border-radius: 10px;        
+        }
+
+        a {    
+            color: white;
+            background-color: #a259ff;  
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #a259ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
+</head>
+<body>
 
+    <h1>Manya Shetty</h1>
+
+    <!-- This text will change -->
+    <h3 id="course">Computer Science Engineering Student</h3>
+
+    <!-- Button -->
+    <button onclick="changeCourse()">Change Course</button>
+
+    <div class="list-container">
+        <ul>
+            <li>Interested to explore new things.</li>
+            <li>Languages known: C, Python.</li>
+        </ul>
+    </div>
+
+    <h3>Education</h3>
+    <div class="list-container">
+        <ul>
+            <li>BE in Computer Science Engineering (Pursuing)</li>
+            <li>Completed Computer Course</li>
+            <li>12th Grade</li>
+            <li>10th Grade</li>
+        </ul>
+    </div>
+
+    <h3>Career Objective</h3>
+    <p>
+        To secure a position in the field of Computer Science where I can
+        apply my knowledge, improve my skills, and contribute to organizational growth.
+    </p>
+
+    <h3>Strengths</h3>
+    <div class="list-container">
+        <ul>
+            <li>Hardworking</li>
+            <li>Good communication skills</li>
+        </ul>
+    </div>
+
+    <h3>Hobbies</h3>
+    <div class="list-container">
+        <ul>
+            <li>Learning new technologies</li>
+            <li>Listening to music</li>
+        </ul>
+    </div>
+
+    <p>
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>My Resume</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            text-align: center;
+            background-color: #1a0f2e;  
+            color: white;              
+        }
+
+        h1 {
+            color: #d291ff;              
+            border-bottom: 2px solid #d291ff;
+        }
+
+        h3, p {
+            color: white;            
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            text-align: left;
+            list-style-type: square;
+            background-color: black;    
+            padding: 15px 30px;          
+            border-radius: 10px;        
+        }
+
+        a {    
+            color: white;
+            background-color: #a259ff;  
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #a259ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Manya Shetty</h1>
+
+    <!-- This text will change -->
+    <h3 id="course">Computer Science Engineering Student</h3>
+
+    <!-- Button -->
+    <button onclick="changeCourse()">Change Course</button>
+
+    <div class="list-container">
+        <ul>
+            <li>Interested to explore new things.</li>
+            <li>Languages known: C, Python.</li>
+        </ul>
+    </div>
+
+    <h3>Education</h3>
+    <div class="list-container">
+        <ul>
+            <li>BE in Computer Science Engineering (Pursuing)</li>
+            <li>Completed Computer Course</li>
+            <li>12th Grade</li>
+            <li>10th Grade</li>
+        </ul>
+    </div>
+
+    <h3>Career Objective</h3>
+    <p>
+        To secure a position in the field of Computer Science where I can
+        apply my knowledge, improve my skills, and contribute to organizational growth.
+    </p>
+
+    <h3>Strengths</h3>
+    <div class="list-container">
+        <ul>
+            <li>Hardworking</li>
+            <li>Good communication skills</li>
+        </ul>
+    </div>
+
+    <h3>Hobbies</h3>
+    <div class="list-container">
+        <ul>
+            <li>Learning new technologies</li>
+            <li>Listening to music</li>
+        </ul>
+    </div>
+
+    <p>
+        <a href="https://manyashetty749-max.github.io/sem4-fet/">My Resume</a>
+    </p>
+
+    <!-- JavaScript -->
     <script>
-        function getInput() {
-            let input = prompt("Enter something:");
+        function changeCourse() {
+            let newCourse = prompt("Enter new course/title:");
 
-            if (input !== null && input !== "") {
-                alert("You entered: " + input);
+            if (newCourse !== null && newCourse.trim() !== "") {
+                document.getElementById("course").innerText = newCourse;
             } else {
-                alert("No input provided!");
+                alert("Please enter valid text");
             }
         }
     </script>
 
-</head>
+</body>
+</html>
 
-<body>
-
-<div class="container">
-
-    <div class="header">
-        <h1>Lisha Kotian</h1>
-        <h2>Computer Science Engineering Student</h2>
-    </div>
-
-    <h3>About Me</h3>
-    <ul>
-        <li>Interested in exploring new technologies</li>
-        <li>Languages known: C, Python</li>
-    </ul>
-
-    <h3>Education</h3>
-    <ul>
-        <li>BE in Computer Science Engineering (Pursuing)</li>
-        <li>Completed Computer Course</li>
-        <li>12th Grade</li>
-        <li>10th Grade</li>
-    </ul>
-
-    <h3>Career Objective</h3>
-    <p>
-        To secure a position in the field of computer science where I can apply my knowledge,
-        improve my skills, and contribute to organizational growth.
     </p>
 
-    <h3>Strengths</h3>
-    <ul>
-        <li>Hardworking</li>
-        <li>Good communication skills</li>
-    </ul>
+    <!-- JavaScript -->
+    <script>
+        function changeCourse() {
+            let newCourse = prompt("Enter new course/title:");
 
-    <h3>Hobbies</h3>
-    <ul>
-        <li>Learning new technologies</li>
-        <li>Listening to music</li>
-    </ul>
+            if (newCourse !== null && newCourse.trim() !== "") {
+                document.getElementById("course").innerText = newCourse;
+            } else {
+                alert("Please enter valid text");
+            }
+        }
+    </script>
 
-    <!-- Button to trigger prompt -->
-    <button onclick="getInput()">Click to Enter Input</button>
+</body>
+</html>
 
-    <a href="https://lisha-kotian.github.io/sem4-fet/" target="_blank">
-        View My Online Resume
-    </a>
+    </p>
 
-</div>
+    <!-- JavaScript -->
+    <script>
+        function changeCourse() {
+            let newCourse = prompt("Enter new course/title:");
+
+            if (newCourse !== null && newCourse.trim() !== "") {
+                document.getElementById("course").innerText = newCourse;
+            } else {
+                alert("Please enter valid text");
+            }
+        }
+    </script>
 
 </body>
 </html>
