@@ -1,63 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Validated Form</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f0f4f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<title>Styled Form</title>
 
-        .form-container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            width: 320px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        h2 {
-            text-align: center;
-        }
 
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+.form-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #0284c7;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-        button:hover {
-            background: #0369a1;
-        }
 
-        .output {
-            margin-top: 15px;
-            background: #e0f2fe;
-            padding: 10px;
-            border-radius: 5px;
-        }
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    background: rgba(255,255,255,0.8);
+}
 
-        .error {
-            color: red;
-            font-size: 14px;
-        }
-    </style>
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #ff7a18;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff5500;
+}
+
+
+.output {
+    margin-top: 15px;
+    background: rgba(255,255,255,0.2);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+
+.error {
+    color: #ffdede;
+    font-size: 13px;
+}
+</style>
+
 </head>
 <body>
 
@@ -83,68 +96,41 @@
 document.getElementById("myForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // get values
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
     let message = document.getElementById("message").value.trim();
 
-    // error elements
     let nameError = document.getElementById("nameError");
     let emailError = document.getElementById("emailError");
     let msgError = document.getElementById("msgError");
 
-    // clear old errors
     nameError.textContent = "";
     emailError.textContent = "";
     msgError.textContent = "";
 
     let isValid = true;
 
-    // Name validation (only letters and spaces)
-    let namePattern = /^[A-Za-z ]+$/;
-    if (name === "") {
-        nameError.textContent = "Name is required";
-        isValid = false;
-    } else if (!namePattern.test(name)) {
-        nameError.textContent = "Only letters allowed";
+    if (!/^[A-Za-z ]+$/.test(name)) {
+        nameError.textContent = "Invalid name";
         isValid = false;
     }
 
-    // Email validation
-    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (email === "") {
-        emailError.textContent = "Email is required";
-        isValid = false;
-    } else if (!emailPattern.test(email)) {
-        emailError.textContent = "Invalid email format";
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+        emailError.textContent = "Invalid email";
         isValid = false;
     }
 
-    // Message validation
     if (message.length < 5) {
-        msgError.textContent = "Message must be at least 5 characters";
+        msgError.textContent = "Min 5 characters";
         isValid = false;
     }
 
-    // If valid, display data
     if (isValid) {
-        let result = `
-            <strong>Name:</strong> ${name} <br>
-            <strong>Email:</strong> ${email} <br>
-            <strong>Message:</strong> ${message}
-        `;
-        document.getElementById("output").innerHTML = result;
+        document.getElementById("output").innerHTML =
+            `<b>${name}</b><br>${email}<br>${message}`;
     }
 });
 </script>
 
 </body>
 </html>
-
-Please do not print this email unless it is necessary. Every unprinted email helps the environment.
-Mangalore Institute of Technology & Engineering
-Autonomous Institute affiliated to VTU, Belagavi,
-NAAC A+ Grade || NIRF Innovation Band 151-300 || AICTE – CII – Platinum Grade || NBA Accredited Courses
-Moodabidri, DK Dist Karnataka, India -  – 574225 || Tel: 08258-262695/96/97
-Web || LinkedIn || Twitter || FB || Insta || email
-
