@@ -1,147 +1,92 @@
+
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Simple Form</title>
+  <title>change color in Z-index</title>
+
   <style>
     body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      font-family: Arial, sans-serif;
+      font-family: Arial;
       text-align: center;
-      padding: 40px;
-      color: white;
+      margin-top: 50px;
     }
-    .form-box {
-      width: 320px;
+
+    .container {
+      position: relative;
+      width: 200px;
+      height: 200px;
       margin: auto;
-      padding: 20px;
-      background: rgba(255,255,255,0.1);
+    }
+
+    .box {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      color: white;
+      font-size: 25px;
+      line-height: 200px;
       border-radius: 10px;
     }
-    input, select, button {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: none;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-     a {
-            color: white;
-            background-color: #3399ff;
-            padding: 8px 12px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
 
-        button {
-            margin-top: 10px;
-            padding: 8px 12px;
-            border-radius: 5px;
-            border: none;
-            background-color: #66ccff;
-            color: black;
-            cursor: pointer;
-        }
-    button {
-      background: #38bdf8;
-      color: black;
-      cursor: pointer;
-      font-weight: bold;
+    .purple {
+      background: purple;
+      z-index: 1;
     }
-    #output {
+
+    .blue {
+      background: blue;
+      z-index: 2;
+    }
+
+    .red {
+      background: red;
+      z-index: 3;
+    }
+    .orange{
+    background:orange;
+    z-index:4;
+    }
+    
+   
+
+    button {
       margin-top: 20px;
-      color: #e2e8f0;
-      text-align: left;
-      width: 320px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 10px;
+      cursor: pointer;
     }
   </style>
 </head>
+
 <body>
-<h2>Student Registration Form</h2>
-<div class="form-box">
-  <input type="text" id="nameInput" placeholder="Enter your name">
-  <input type="email" id="emailInput" placeholder="Enter your email">
-  <select id="courseSelect">
-    <option value="C">C Programming</option>
-    <option value="Python">Python</option>
-    <option value="Java">Java</option>
-    <option value="Web">Web Development</option>
-  </select>
-  <select id="levelBox" size="4">
-    <option>Beginner</option>
-    <option>Intermediate</option>
-    <option>Advanced</option>
-    <option>Expert</option>
-  </select>
-  <button id="submitBtn">Submit</button>
-</div>
-<p id="output"></p>
-<p>
-<a href="https://vsanjana3110-spec.github.io/sem4-fet/">My Resume</a>
-</p>
-<script>
-const nameInput = document.getElementById("nameInput");
-const emailInput = document.getElementById("emailInput");
-const courseSelect = document.getElementById("courseSelect");
-const levelBox = document.getElementById("levelBox");
-const output = document.getElementById("output");
-const submitBtn = document.getElementById("submitBtn");
 
-let records = [];
+  <h1>Z-Index Demo</h1>
+  <h2>change color</h2>
 
-submitBtn.addEventListener("click", function () {
+  <!-- All boxes overlap in one place -->
+  <div class="container">
+    <div class="box purple" id="purpleBox">purple</div>
+    <div class="box blue" id="blueBox">Blue</div>
+    <div class="box red" id="redBox">red</div>
+    <div class="box orange" id="orangebox">orange</div>
+  </div>
+<a href="https://lisha-kotian.github.io/sem4-fet/">My Resume</a>
 
-    let name = nameInput.value.trim();
-    let email = emailInput.value.trim();
-    let course = courseSelect.value;
-    let level = levelBox.value;
+  <br>
 
-    // VALIDATION PATTERNS
-    let namePattern = /^[A-Za-z\s]+$/;
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  <!-- Buttons -->
+  <button onclick="showBox('purpleBox')">Show purple</button>
+  <button onclick="showBox('blueBox')">Show Blue</button>
+  <button onclick="showBox('redBox')">Show red</button>
+  <button onclick="showBox('orangeBox')">show orange</button>
 
-    // CHECK EMPTY
-    if (name === "" || email === "") {
-        alert("Please fill all fields");
-        return;
+  <script>
+    let z = 3;
+
+    function showBox(id) {
+      z++;
+      document.getElementById(id).style.zIndex = z;
     }
-
-    if (!namePattern.test(name)) {
-        alert("Name must contain only letters");
-        return;
-    }
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address");
-        return;
-    }
-    records.push({
-        name: name,
-        email: email,
-        course: course,
-        level: level
-    });
-    let displayText = "";
-
-    for (let i = 0; i < records.length; i++) {
-        displayText +=
-            (i + 1) + ". " +
-            "Name: " + records[i].name +
-            " | Email: " + records[i].email +
-            " | Course: " + records[i].course +
-            " | Level: " + records[i].level +
-            "<br>";
-    }
-    output.innerHTML = displayText;
-    nameInput.value = "";
-    emailInput.value = "";
-});
-nameInput.onfocus = function () {
-    nameInput.style.background = "#e0f2fe";
-};
-</script>
+  </script>
 
 </body>
 </html>
