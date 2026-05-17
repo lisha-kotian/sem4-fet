@@ -1,75 +1,198 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>My Resume</title>
+
   <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
     body {
-      background: linear-gradient(to right, lavender, lightpink);
-      font-family: sans-serif;
+      background: linear-gradient(135deg, #d9a7ff, #ffd6e8, #c9d6ff);
+      background-size: 400% 400%;
+      animation: bgMove 8s infinite alternate;
+      font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 130px;
+      min-height: 100vh;
+      padding-top: 80px;
     }
-   h1 {
+
+    @keyframes bgMove{
+      0%{
+        background-position:left;
+      }
+      100%{
+        background-position:right;
+      }
+    }
+
+    .container{
+      width: 90%;
+      max-width: 700px;
+      margin: auto;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      animation: fadeIn 2s;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    h1 {
       margin-bottom: 12px;
+      color: darkblue;
+      font-size: 40px;
+      text-shadow: 2px 2px 5px white;
+      animation: glow 2s infinite alternate;
     }
+
+    @keyframes glow{
+      from{
+        text-shadow: 0 0 5px white;
+      }
+      to{
+        text-shadow: 0 0 20px blue;
+      }
+    }
+
     p {
       color: black;
-      margin-bottom: 22px;
+      margin-bottom: 25px;
+      font-size: 20px;
+      font-weight: bold;
     }
-  ol {
+
+    ol {
       list-style-position: inside;
       padding: 0;
-      color: black;
     }
-   li {
+
+    li {
       margin: 12px auto;
-      font-size: 16px;
-      background-color: white;
-      width: 250px;
-      padding: 10px;
-      border-radius: 8px;
+      font-size: 17px;
+      background: linear-gradient(to right, white, #f0f0ff);
+      width: 300px;
+      padding: 12px;
+      border-radius: 12px;
+      transition: 0.4s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    li:hover{
+      transform: scale(1.05);
+      background: linear-gradient(to right, #6a11cb, #2575fc);
     }
 
     a {
       text-decoration: none;
-      color: blue;
+      color: darkblue;
+      font-weight: bold;
       transition: 0.3s;
     }
 
-    a:hover {
-      color: white;
-      text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f;
+    li:hover a{
+      color:white;
     }
+
+    a:hover {
+      text-shadow: 0 0 5px white, 0 0 10px white;
+    }
+
+    button{
+      margin-top:20px;
+      padding:12px 25px;
+      border:none;
+      border-radius:10px;
+      background:darkblue;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:black;
+      transform:scale(1.1);
+    }
+
   </style>
 </head>
 
 <body>
-  <h1>Hello World!</h1>
-  <p>Assignments</p>
 
-  <ol>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/1.html">assignment 1</a></li>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/two.html">assignment 2</a></li>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/three.html">assignment 3</a></li>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/four.html">assignment 4</a></li>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/fifth.html">assignment 5</a></li>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/sixth.html">assignment 6</a></li>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/seven.html">assignment 7</a></li>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/one_css.html">assignment 1 css</a></li>
-    
-    
+  <div class="container">
 
-    
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/four_css.html"> Assignment 2 css</a></li>
-    
-    <li><a href="https:// lisha-kotian.github.io/sem4-fet/assignment/one_css_jv.html">JAVA SCRIPT Assignment 1</a></li>
-     <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/two_css_jv.html">JAVA SCRIPT Assignment 2</a></li>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/three_css_jv.html">JAVA SCRIPT Assignment 3</a></li>
-    <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/four_css_jv.html">JAVA SCRIPT Assignment 4</a></li>
-     <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/five_css_jv.html">JAVA SCRIPT Assignment 5</a></li>
-     <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/six_css_jv.html">JAVA SCRIPT Assignment 6</a></li>
-  </ol>
+    <h1 id="title">Hello World!</h1>
+
+    <p>Assignments</p>
+
+    <ol>
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/1.html">Assignment 1</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/two.html">Assignment 2</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/three.html">Assignment 3</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/four.html">Assignment 4</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/fifth.html">Assignment 5</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/sixth.html">Assignment 6</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/seven.html">Assignment 7</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/one_css.html">Assignment 1 CSS</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/four_css.html">Assignment 2 CSS</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/one_css_jv.html">JavaScript Assignment 1</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/two_css_jv.html">JavaScript Assignment 2</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/three_css_jv.html">JavaScript Assignment 3</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/four_css_jv.html">JavaScript Assignment 4</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/five_css_jv.html">JavaScript Assignment 5</a></li>
+
+      <li><a href="https://lisha-kotian.github.io/sem4-fet/assignment/six_css_jv.html">JavaScript Assignment 6</a></li>
+    </ol>
+
+    <button onclick="showMessage()">Click Me</button>
+
+  </div>
+
+  <script>
+
+    function showMessage(){
+      alert("Welcome to My Assignment Page!");
+    }
+
+    const title = document.getElementById("title");
+
+    title.addEventListener("mouseover", function(){
+      title.innerHTML = "Welcome Lisha!";
+    });
+
+    title.addEventListener("mouseout", function(){
+      title.innerHTML = "Hello World!";
+    });
+
+  </script>
 
 </body>
 </html>
