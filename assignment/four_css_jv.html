@@ -1,150 +1,158 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Simple Form</title>
-  <style>
-    body {
-      background: linear-gradient(135deg, #1d2671, #c33764);
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-      color: white;
-    }
-    .form-box {
-      width: 320px;
-      margin: auto;
-      padding: 20px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-    }
-    input, select, button {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: none;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-     a {
-            color: white;
-            background-color: #3399ff;
-            padding: 8px 12px;
-            border-radius: 5px;
-            text-decoration: none;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Contact Form</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 360px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            transition: 0.3s;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 5px rgba(59,130,246,0.5);
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
         }
 
         button {
-            margin-top: 10px;
-            padding: 8px 12px;
-            border-radius: 5px;
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: white;
+            font-size: 16px;
             border: none;
-            background-color: #66ccff;
-            color: black;
+            border-radius: 6px;
             cursor: pointer;
+            transition: 0.3s;
         }
-    button {
-      background: #38bdf8;
-      color: black;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    #output {
-      margin-top: 20px;
-      color: #e2e8f0;
-      text-align: left;
-      width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
+
+        button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .error {
+            color: #dc2626;
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+        .output {
+            margin-top: 15px;
+            background: #f0f9ff;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #3b82f6;
+            font-size: 14px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .attempts {
+            margin-top: 10px;
+            color: #555;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
-<h2>Student Registration Form</h2>
-<div class="form-box">
-  <input type="text" id="nameInput" placeholder="Enter your name">
-  <input type="email" id="emailInput" placeholder="Enter your email">
-  <select id="courseSelect">
-    <option value="C">C Programming</option>
-    <option value="Python">Python</option>
-    <option value="Java">Java</option>
-    <option value="Web">Web Development</option>
-  </select>
-  <select id="levelBox" size="4">
-    <option>Beginner</option>
-    <option>Intermediate</option>
-    <option>Advanced</option>
-    <option>Expert</option>
-  </select>
-  <button id="submitBtn">Submit</button>
-</div>
-<p id="output"></p>
-<p>
-<a href="https://lisha-kotian.github.io/sem4-fet/">My Resume</a>
-</p>
-<script>
-const nameInput = document.getElementById("nameInput");
-const emailInput = document.getElementById("emailInput");
-const courseSelect = document.getElementById("courseSelect");
-const levelBox = document.getElementById("levelBox");
-const output = document.getElementById("output");
-const submitBtn = document.getElementById("submitBtn");
 
-let records = [];
+    <a href="https://lisha-kotian.github.io/sem4-fet/">My Resume</a>
+    <div class="container" id="pinSection">
+        <h2>Enter Security PIN</h2>
 
-submitBtn.addEventListener("click", function () {
+        <input type="password" id="pinInput" placeholder="Enter PIN">
 
-    let name = nameInput.value.trim();
-    let email = emailInput.value.trim();
-    let course = courseSelect.value;
-    let level = levelBox.value;
+        <div class="error" id="pinError"></div>
 
-    // VALIDATION PATTERNS
-    let namePattern = /^[A-Za-z\s]+$/;
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        <button id="pinBtn">Unlock</button>
 
-    // CHECK EMPTY
-    if (name === "" || email === "") {
-        alert("Please fill all fields");
-        return;
-    }
+        <div class="attempts" id="attemptsText">
+            Attempts Left: 3
+        </div>
+    </div>
 
-    if (!namePattern.test(name)) {
-        alert("Name must contain only letters");
-        return;
-    }
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address");
-        return;
-    }
-    records.push({
-        name: name,
-        email: email,
-        course: course,
-        level: level
-    });
-    let displayText = "";
+    
+    <div class="container hidden" id="formSection">
+        <h2>Contact Form</h2>
 
-    for (let i = 0; i < records.length; i++) {
-        displayText +=
-            (i + 1) + ". " +
-            "Name: " + records[i].name +
-            " | Email: " + records[i].email +
-            " | Course: " + records[i].course +
-            " | Level: " + records[i].level +
-            "<br>";
-    }
-    output.innerHTML = displayText;
-    nameInput.value = "";
-    emailInput.value = "";
-});
-nameInput.onfocus = function () {
-    nameInput.style.background = "#e0f2fe";
-};
-</script>
+        <form id="myForm">
 
+            <input type="text" id="name" placeholder="Enter Name">
+            <div class="error" id="nameError"></div>
+
+            <input type="text" id="email" placeholder="Enter Email">
+            <div class="error" id="emailError"></div>
+
+            <textarea id="message" placeholder="Enter Message"></textarea>
+            <div class="error" id="msgError"></div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="output" id="output"></div>
+    </div>
+
+    <script src="five_script.js"></script>
+  <a href="https://lisha-kotian.github.io/sem4-fet/">My Resume</a>
 </body>
 </html>
+
+
+
+
+
